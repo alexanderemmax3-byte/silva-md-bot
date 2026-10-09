@@ -1,3 +1,11 @@
+const http = require('http');
+const port = process.env.PORT || 8080;
+http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Bot is running smoothly!\n');
+}).listen(port, () => {
+  console.log(`Health check server listening on port ${port}`);
+});
 // silva.js — Updated with fixes for group functionality and error handling
 const { File: BufferFile } = require('node:buffer');
 global.File = BufferFile;
